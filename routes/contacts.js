@@ -18,14 +18,14 @@ router.post('/', (req, res) => {
 // @route   PUT api/constacts/:id
 // @desk    Update Contact
 // access   Private
-router.put('/', (req, res) => {
+router.put('/:id', (req, res) => {
     res.send('Update Contact');
 });
 
 // @route   DELETE api/constacts/:id
 // @desk    Delete contact
 // access   Private
-router.delete('/', (req, res) => {
+router.delete('/:id', (req, res) => {
     res.send('Delete Contact');
 });
 
