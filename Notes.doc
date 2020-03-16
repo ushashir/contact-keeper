@@ -5,12 +5,12 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/ushashir/fsrfsdsfgsgf.git
 git push -u origin master
-
 or
-
 git remote add origin https://github.com/ushashir/fsrfsdsfgsgf.git
 git push -u origin master
 
-PROBLEM. APP NOTE CONNECTING WITH MY MUNGO DB
+
+CONNECT DB CARRY OVER
+check out mongoURI and db.js and server.com
 
 

@@ -1,15 +1,16 @@
-const express = require('express');
-const connectDB = require('./routes/config/db');
+const express = require('express'); 
+const connectDB = require('./config/db');
+
 
 const app = express();
 
-// Connnet DB();
-connectDB();
+// Connnet Database
+// connectDB();
 
 // Init Middleware
-app.use(express.json({ extended: false }));
+// app.use(express.json({ extended: false }));
 
-app.get('/', (req, res) => res.json({ msg: 'Welcome to the Contact Keeper API...'}));
+app.get( '/', (req, res) => res.json({ msg: 'Welcome to the Contact Keeper API...'}));
 
 // Define routes
 app.use('/api/users', require('./routes/users'));
