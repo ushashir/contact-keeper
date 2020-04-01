@@ -20,3 +20,14 @@ continue from contacts:
 
 integrating Back end with UI involves different approaches. 
 This app makes use of concorently
+
+POSTMAN
+Key: Content-Type
+VALUE: application.json
+
+auth token
+read context redcer
+
+uuid not exported solved
+
+user registration token 4. user reg. 12
