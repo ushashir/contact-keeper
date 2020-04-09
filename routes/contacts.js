@@ -12,7 +12,7 @@ const Contact = require('../models/Contact');
 // access   Private
 router.get('/', auth, async (req, res) => { 
     try {
-        const contact = await Contact.find( {users: req.user.id}).sort( { date: -1 });
+        const contacts = await Contact.find( {users: req.user.id}).sort( { date: -1 });
         res.json(contacts);
     } catch (err) {
         console.error(err.message);
@@ -23,22 +23,27 @@ router.get('/', auth, async (req, res) => {
 // @route   POST api/contacts
 // @desk    Add new contact
 // access   Private
-router.post('/', [ auth, [
-    check('name', 'Name is required')
-    .not()
-    .isEmpty()
-] ], async (req, res) => {
+router.post(
+    '/', 
+    [ auth, 
+        [
+        check('firstName', 'Name is required')
+        .not()
+        .isEmpty()
+    ] 
+], async (req, res) => {
     const errors = validationResult(req);
     if(!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
 
-    const  { name, email, phone, type } = req.body;
+    const  { firstName, lastName, email, phone, type } = req.body;
 
     try {
         const newContact = new Contact ({
-            name,
-            email,
+            firstName, 
+            lastName,
+            email, 
             phone,
             type,
             user: req.user.id
@@ -48,7 +53,7 @@ router.post('/', [ auth, [
 
         res.json(contact);
     } catch (err) {
-        console.error.error(err.message);
+        console.error(err.message);
         res.status(500).send('Server Error')
     }
 

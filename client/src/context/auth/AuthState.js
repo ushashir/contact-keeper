@@ -52,7 +52,7 @@ const AuthState = props => {
 
       dispatch({
         type: REGISTER_SUCCESS,
-        payload: res.data.msg
+        payload: res.data
       })
 
       loadUser()

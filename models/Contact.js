@@ -22,7 +22,7 @@ const ContactSchema = mongoose.Schema({
         required: true
     },
     phone: {
-        type: Number,
+        type: String,
     },
     type: {
         type: String,
