@@ -10,8 +10,8 @@ const ContactForm = () => {
     firstName: '',
     lastName: '',
     email: '',
-    phoneNo: '',
-    type: 'personal' 
+    phone: '',
+    type: 'personal'
   }
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const ContactForm = () => {
 
   const [contact, setContact] = useState(initialState)
 
-  const {firstName, lastName, email, phoneNo, type} = contact
+  const {firstName, lastName, email, phone, type} = contact
 
   const onChange = e =>
     setContact({...contact, [e.target.name]: e.target.value})
@@ -72,9 +72,9 @@ const ContactForm = () => {
       />
       <input
         type='text'
-        name='phoneNo'
+        name='phone'
         placeholder='Phone Number'
-        value={phoneNo}
+        value={phone}
         onChange={onChange}
       />
       <h5>Contact Type</h5>

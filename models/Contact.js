@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const ContactSchema = mongoose.Schema({
-    users: {
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'users'
     },
@@ -11,18 +11,13 @@ const ContactSchema = mongoose.Schema({
     },
     lastName: {
         type: String,
-        required: true
     },
     email: {
         type: String,
-        required: true,
-    },
-    password: {
-        type: String,
-        required: true
     },
     phone: {
         type: String,
+        required: true
     },
     type: {
         type: String,
