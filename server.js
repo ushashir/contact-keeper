@@ -1,8 +1,9 @@
-const express = require('express'); 
+import express from 'express';
 const connectDB = require('./config/db');
 
 
 const app = express();
+console.log(app);
 
 // Connnet Database
 connectDB();
